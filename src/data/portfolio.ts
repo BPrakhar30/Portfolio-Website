@@ -1,0 +1,192 @@
+export const personalInfo = {
+  name: "Prakhar Bhardwaj",
+  title: "AI Engineer & Machine Learning Specialist",
+  tagline: "Teaching machines to see, learn, and do it better next time.",
+  bio: "I'm an AI Engineer with a passion for LLMs and Computer Vision. From building self-teaching systems at Skylark Labs to deploying production chatbots at BNY Mellon and Enterprise Solutions, I turn research into real-world impact. MS in Mechanical Engineering (ML focus) from Carnegie Mellon University with a 4.0 GPA.",
+  email: "ai.prakharb@gmail.com",
+  phone: "(412) 954-7400",
+  location: "DC Metropolitan Area",
+  github: "https://github.com/BPrakhar30",
+  linkedin: "https://linkedin.com/in/bprakhar1/",
+  website: "https://aiwithprakhar.carrd.co/",
+};
+
+export const education = [
+  {
+    institution: "Carnegie Mellon University",
+    degree: "Master of Science in Mechanical Engineering",
+    focus: "Machine Learning & Computer Vision",
+    gpa: "4.0 / 4.0",
+    period: "Aug 2022 - May 2024",
+    location: "Pittsburgh, PA",
+    courses: ["Machine Learning", "Deep Learning", "Data Analytics", "Computer Vision"],
+  },
+  {
+    institution: "Thapar Institute of Engineering and Technology",
+    degree: "Bachelor of Engineering in Mechanical Engineering",
+    focus: "",
+    gpa: "9.3 / 10.0",
+    period: "Aug 2017 - June 2021",
+    location: "Punjab, India",
+    courses: ["Object-Oriented Programming", "Optimization Techniques", "Numerical Analysis"],
+  },
+];
+
+export const experience = [
+  {
+    role: "AI Engineer",
+    company: "Enterprise Solutions Inc.",
+    period: "Dec 2024 - Present",
+    location: "Remote",
+    bullets: [
+      "Built a Chat Assistant web app for Loudoun County Dept. of IT using Cosmos DB, Python backend, React+Vite frontend deployed on Azure Web App.",
+      "Integrated voice features and user memory personalization to enhance accessibility and conversational depth.",
+    ],
+    tags: ["Azure", "Cosmos DB", "React", "Python", "LLM"],
+  },
+  {
+    role: "Data Scientist",
+    company: "BNY Mellon",
+    period: "Sep 2024 - Dec 2024",
+    location: "Pittsburgh, PA",
+    bullets: [
+      "Created RAG-based chatbot using on-prem Llama3.1-70b for remediation advice on vulnerable drivers: 88% accuracy, F1 score 0.85.",
+      "Built RESTful API with FastAPI and integrated it into the frontend, decoupling logic for scalability.",
+    ],
+    tags: ["RAG", "Llama 3.1", "FastAPI", "LangChain", "Python"],
+  },
+  {
+    role: "Research Associate",
+    company: "Carnegie Mellon University",
+    period: "May 2024 - Sep 2024",
+    location: "Pittsburgh, PA",
+    bullets: [
+      "Built an end-to-end AI podcast generation pipeline using Llama3 and GPT-4 for script generation (88% accuracy).",
+      "Integrated voice-cloning text-to-speech model to produce realistic, engaging audio outputs.",
+    ],
+    tags: ["Llama 3", "GPT-4", "TTS", "Python", "GenAI"],
+  },
+  {
+    role: "Machine Learning Intern",
+    company: "Skylark Labs Inc.",
+    period: "June 2023 - Dec 2023",
+    location: "San Francisco, CA",
+    bullets: [
+      "Developed self-learning label management module using YOLOv8, DreamSim, Swin Transformer, and BoT-SORT with 40% accuracy boost via synthetic data generation.",
+      "Applied super-resolution techniques to sharpen image clarity, achieving 30% improvement in fine-object detection.",
+    ],
+    tags: ["YOLOv8", "Computer Vision", "PyTorch", "Synthetic Data"],
+  },
+  {
+    role: "Automation Engineer",
+    company: "Dana Anand India Pvt. Ltd.",
+    period: "July 2021 - June 2022",
+    location: "Maharashtra, India",
+    bullets: [
+      "Built deep learning quality control system for bearing cups using Basler ace camera + Jetson Nano, achieving 90% reduction in manual sorting.",
+      "Increased production efficiency by 25%, scaling output to 100,000 parts/month.",
+    ],
+    tags: ["Deep Learning", "Jetson Nano", "OpenCV", "MLOps"],
+  },
+];
+
+export const projects = [
+  {
+    slug: "robinhood-ai-portfolio",
+    title: "Robinhood AI Portfolio Copilot",
+    description: "Full-stack AI investment platform with Robinhood/CSV brokerage import, a conversational PydanticAI agent (Gemini 2.5 Flash) over FastMCP tools, portfolio health scoring, macro analysis, real-time stock data, and streaming SSE chat. Full auth, rate limiting, Logfire observability, and Docker Compose deployment.",
+    tags: ["PydanticAI", "FastMCP", "Next.js", "FastAPI", "PostgreSQL", "Gemini"],
+    github: "https://github.com/BPrakhar30/Robinhood_AI_Portfolio_Analyzer",
+    featured: true,
+  },
+  {
+    slug: "ai-podcast",
+    title: "End-to-End AI Generated Podcast",
+    description: "Full pipeline to generate complete podcasts using generative AI, from topic to final audio with voice cloning.",
+    tags: ["Llama 3", "GPT-4", "TTS", "Python"],
+    github: "https://github.com/BPrakhar30/End-to-End_AI-Generated_Podcast",
+    featured: true,
+  },
+  {
+    slug: "rag-chatbot",
+    title: "RAG Chatbot",
+    description: "RAG system using LangChain, Llama 3, Chroma vector DB and OpenAI embeddings, deployed as a Chrome extension.",
+    tags: ["RAG", "LangChain", "Llama 3", "Flask", "React"],
+    github: "https://github.com/BPrakhar30/LLM_Stack",
+    featured: true,
+  },
+  {
+    slug: "self-learning",
+    title: "Self-Learning AI System",
+    description: "Label management module with YOLOv8, DreamSim & BoT-SORT for dynamic classification and tracking in a self-teaching pipeline.",
+    tags: ["YOLOv8", "BoT-SORT", "Computer Vision"],
+    github: "https://github.com/BPrakhar30/Self_Learning",
+    featured: true,
+  },
+  {
+    slug: "3d-printing-defect",
+    title: "3D Printing Defect Detection",
+    description: "Deep learning pipeline to detect and classify defects in 3D-printed parts, improving quality control automation.",
+    tags: ["Python", "Deep Learning", "Computer Vision"],
+    github: "https://github.com/BPrakhar30/Defect_Detection_3D_Printing_Issues",
+    featured: false,
+  },
+  {
+    slug: "neural-style-transfer",
+    title: "Neural Style Transfer",
+    description: "Implementation of Neural Style Transfer to apply artistic styles to photos using deep convolutional networks.",
+    tags: ["PyTorch", "CNN", "Deep Learning"],
+    github: "https://github.com/BPrakhar30/Neural_Style_Transfer",
+    featured: false,
+  },
+  {
+    slug: "image-generation-gans",
+    title: "Image Generation Using GANs",
+    description: "DCGAN implementation for high-quality image synthesis, exploring latent space representations.",
+    tags: ["PyTorch", "GAN", "DCGAN"],
+    github: "https://github.com/BPrakhar30/Image_Generation_Using_GANs",
+    featured: false,
+  },
+  {
+    slug: "structure-from-motion",
+    title: "Instant3D: 3D Reconstruction",
+    description: "3D reconstruction pipeline from 2D image sequences using classical computer vision techniques.",
+    tags: ["Computer Vision", "3D Reconstruction", "OpenCV"],
+    github: "https://github.com/BPrakhar30/Structure_from_Motion",
+    featured: false,
+  },
+  {
+    slug: "bert-fine-tuning",
+    title: "BERT Fine-Tuning",
+    description: "Fine-tuned BERT-base-uncased for sentiment analysis on 1.6M tweets: 87% accuracy, F1 score 0.85 on NVIDIA A6000.",
+    tags: ["BERT", "PyTorch", "NLP", "Transformers"],
+    github: "https://github.com/BPrakhar30/Machine-Learning",
+    featured: false,
+  },
+  {
+    slug: "yt-summarizer",
+    title: "YouTube Video Summarizer",
+    description: "Full-stack application to summarize YouTube videos using LLMs with a React frontend and Python backend.",
+    tags: ["LLM", "React", "Python", "FastAPI"],
+    github: "https://github.com/BPrakhar30/yt_video_summarizer_backend",
+    featured: false,
+  },
+  {
+    slug: "foreign-object-debris",
+    title: "Foreign Object Debris Detection",
+    description: "Aviation safety FOD detection system with YOLOv8 and Vision Transformer, built with a synthetic 80GB dataset for the Indian Navy.",
+    tags: ["YOLOv8", "ViT", "Synthetic Data", "Computer Vision"],
+    featured: false,
+  },
+];
+
+export const skills = {
+  "Programming": ["Python", "C++", "SQL", "R", "JavaScript", "TypeScript"],
+  "ML Frameworks": ["PyTorch", "TensorFlow", "Keras", "Hugging Face", "ONNX", "PEFT/LoRA"],
+  "LLM & Agents": ["LangChain", "LlamaIndex", "PydanticAI", "FastMCP", "OpenAI API", "Gemini 2.5", "WandB", "Streamlit"],
+  "Computer Vision": ["OpenCV", "YOLOv8", "TensorRT", "PIL", "Swin Transformer"],
+  "Web / APIs": ["FastAPI", "Flask", "Next.js", "React", "shadcn/ui", "SSE", "REST API", "TanStack Query"],
+  "Databases": ["PostgreSQL", "Faiss", "Pinecone", "Chroma", "Cosmos DB"],
+  "MLOps & Cloud": ["Docker", "Docker Compose", "MLflow", "DVC", "CI/CD", "AWS", "Azure AI Studio", "GCP", "Logfire"],
+  "Data & Finance": ["Finnhub API", "yfinance", "robin_stocks", "Recharts", "Zustand"],
+};
