@@ -436,7 +436,13 @@ export const projectDetails: ProjectDetail[] = [
         ],
       },
     ],
-    media: [],
+    media: [
+      {
+        type: "youtube",
+        src: "EFFhSLyFfPY",
+        caption: "Demo: YouTube Video Summarizer in action",
+      },
+    ],
   },
 ];
 
