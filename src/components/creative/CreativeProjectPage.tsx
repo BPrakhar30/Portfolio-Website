@@ -3,9 +3,10 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useInView } from "framer-motion";
-import { ProjectDetail, ProjectMedia } from "@/data/projectsContent";
+import { ProjectDetail } from "@/data/projectsContent";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
+import { MediaCarousel } from "@/components/MediaCarousel";
 
 /* ─── Particle canvas (same as creative portfolio) ─────────────────────── */
 function ParticleField() {
@@ -90,47 +91,6 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
     >
       {children}
     </motion.div>
-  );
-}
-
-/* ─── Media block ──────────────────────────────────────────────────────── */
-function MediaBlock({ item }: { item: ProjectMedia }) {
-  if (item.type === "youtube") {
-    return (
-      <figure className="my-2">
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10">
-          <iframe
-            src={`https://www.youtube.com/embed/${item.src}`}
-            title={item.caption ?? "Project video"}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full"
-          />
-        </div>
-        {item.caption && (
-          <figcaption className="text-xs text-gray-500 text-center mt-2">{item.caption}</figcaption>
-        )}
-      </figure>
-    );
-  }
-  if (item.type === "video") {
-    return (
-      <figure className="my-2">
-        <video src={item.src} controls className="w-full rounded-2xl border border-white/10" playsInline />
-        {item.caption && (
-          <figcaption className="text-xs text-gray-500 text-center mt-2">{item.caption}</figcaption>
-        )}
-      </figure>
-    );
-  }
-  return (
-    <figure className="my-2">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={item.src} alt={item.caption ?? "Project screenshot"} className="w-full rounded-2xl border border-white/10 object-cover" />
-      {item.caption && (
-        <figcaption className="text-xs text-gray-500 text-center mt-2">{item.caption}</figcaption>
-      )}
-    </figure>
   );
 }
 
@@ -249,55 +209,46 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
 
       {/* Content */}
       <main className="max-w-6xl mx-auto px-8 py-16">
-        <div className={`gap-12 ${hasMedia ? "grid lg:grid-cols-[1fr_360px]" : ""}`}>
+        {/* Sections */}
+        <div className="space-y-12">
+          {project.sections.map((section, i) => (
+            <FadeIn key={section.heading} delay={i * 0.06}>
+              <div className="border border-white/8 bg-white/3 backdrop-blur-sm rounded-2xl p-6">
+                <GlowLabel>{section.heading}</GlowLabel>
 
-          {/* Sections */}
-          <div className="space-y-12">
-            {project.sections.map((section, i) => (
-              <FadeIn key={section.heading} delay={i * 0.06}>
-                <div className="border border-white/8 bg-white/3 backdrop-blur-sm rounded-2xl p-6">
-                  <GlowLabel>{section.heading}</GlowLabel>
-
-                  {Array.isArray(section.body) ? (
-                    <ul className="space-y-3 mt-2">
-                      {section.body.map((item, j) => (
-                        <motion.li
-                          key={j}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: j * 0.04 }}
-                          className="flex gap-3 text-gray-300 text-sm leading-relaxed"
-                        >
-                          <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center">
-                            <span className="w-1 h-1 rounded-full bg-indigo-400" />
-                          </span>
-                          {item}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-gray-300 leading-relaxed text-sm mt-2">{section.body}</p>
-                  )}
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          {/* Media sidebar */}
-          {hasMedia && (
-            <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-              <FadeIn delay={0.2}>
-                <GlowLabel>Media</GlowLabel>
-                <div className="space-y-4">
-                  {project.media.map((item, i) => (
-                    <MediaBlock key={i} item={item} />
-                  ))}
-                </div>
-              </FadeIn>
-            </aside>
-          )}
+                {Array.isArray(section.body) ? (
+                  <ul className="space-y-3 mt-2">
+                    {section.body.map((item, j) => (
+                      <motion.li
+                        key={j}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: j * 0.04 }}
+                        className="flex gap-3 text-gray-300 text-sm leading-relaxed"
+                      >
+                        <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center">
+                          <span className="w-1 h-1 rounded-full bg-indigo-400" />
+                        </span>
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-300 leading-relaxed text-sm mt-2">{section.body}</p>
+                )}
+              </div>
+            </FadeIn>
+          ))}
         </div>
+
+        {/* Media at bottom */}
+        {hasMedia && (
+          <FadeIn delay={0.2} className="mt-16">
+            <GlowLabel>Media</GlowLabel>
+            <MediaCarousel media={project.media} theme="dark" />
+          </FadeIn>
+        )}
       </main>
 
       {/* Footer nav */}

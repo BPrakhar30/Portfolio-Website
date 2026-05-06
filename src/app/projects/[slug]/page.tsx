@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProjectBySlug, projectDetails, ProjectMedia } from "@/data/projectsContent";
+import { getProjectBySlug, projectDetails } from "@/data/projectsContent";
 import { ArrowLeft, ExternalLink, Check } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
+import { MediaCarousel } from "@/components/MediaCarousel";
 
 export async function generateStaticParams() {
   return projectDetails.map((p) => ({ slug: p.slug }));
@@ -16,57 +17,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} | Prakhar Bhardwaj`,
     description: project.tagline,
   };
-}
-
-function MediaBlock({ item }: { item: ProjectMedia }) {
-  if (item.type === "youtube") {
-    return (
-      <figure className="my-2">
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-100">
-          <iframe
-            src={`https://www.youtube.com/embed/${item.src}`}
-            title={item.caption ?? "Project video"}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full"
-          />
-        </div>
-        {item.caption && (
-          <figcaption className="text-xs text-gray-400 text-center mt-2">{item.caption}</figcaption>
-        )}
-      </figure>
-    );
-  }
-
-  if (item.type === "video") {
-    return (
-      <figure className="my-2">
-        <video
-          src={item.src}
-          controls
-          className="w-full rounded-2xl bg-gray-100"
-          playsInline
-        />
-        {item.caption && (
-          <figcaption className="text-xs text-gray-400 text-center mt-2">{item.caption}</figcaption>
-        )}
-      </figure>
-    );
-  }
-
-  return (
-    <figure className="my-2">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={item.src}
-        alt={item.caption ?? "Project screenshot"}
-        className="w-full rounded-2xl object-cover border border-gray-100"
-      />
-      {item.caption && (
-        <figcaption className="text-xs text-gray-400 text-center mt-2">{item.caption}</figcaption>
-      )}
-    </figure>
-  );
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -152,44 +102,40 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       {/* Content */}
       <main className="max-w-4xl mx-auto px-8 py-12">
-        <div className={`gap-12 ${hasMedia ? "grid lg:grid-cols-[1fr_340px]" : ""}`}>
-          {/* Sections */}
-          <div className="space-y-10">
-            {project.sections.map((section) => (
-              <section key={section.heading}>
-                <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
-                  {section.heading}
-                </h2>
-                {Array.isArray(section.body) ? (
-                  <ul className="space-y-2.5">
-                    {section.body.map((item, i) => (
-                      <li key={i} className="flex gap-3 text-gray-700 text-sm leading-relaxed">
-                        <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center">
-                          <Check size={11} className="text-gray-500" />
-                        </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 leading-relaxed text-sm">{section.body}</p>
-                )}
-              </section>
-            ))}
-          </div>
-
-          {/* Media sidebar (only shown when media exists) */}
-          {hasMedia && (
-            <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+        {/* Sections */}
+        <div className="space-y-10">
+          {project.sections.map((section) => (
+            <section key={section.heading}>
               <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
-                Media
+                {section.heading}
               </h2>
-              {project.media.map((item, i) => (
-                <MediaBlock key={i} item={item} />
-              ))}
-            </aside>
-          )}
+              {Array.isArray(section.body) ? (
+                <ul className="space-y-2.5">
+                  {section.body.map((item, i) => (
+                    <li key={i} className="flex gap-3 text-gray-700 text-sm leading-relaxed">
+                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center">
+                        <Check size={11} className="text-gray-500" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-700 leading-relaxed text-sm">{section.body}</p>
+              )}
+            </section>
+          ))}
         </div>
+
+        {/* Media at bottom */}
+        {hasMedia && (
+          <div className="mt-16">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
+              Media
+            </h2>
+            <MediaCarousel media={project.media} theme="light" />
+          </div>
+        )}
       </main>
 
       {/* Footer nav */}

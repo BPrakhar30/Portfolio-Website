@@ -1,7 +1,8 @@
 export interface ProjectMedia {
-  type: "image" | "video" | "youtube";
+  type: "image" | "video" | "youtube" | "spotify";
   /** For image/video: path relative to /public (e.g. "/projects/ai-podcast/demo.jpg")
-   *  For youtube: the video ID (e.g. "dQw4w9WgXcQ") */
+   *  For youtube: the video ID (e.g. "dQw4w9WgXcQ")
+   *  For spotify: the full Spotify URL (e.g. "https://open.spotify.com/show/...") */
   src: string;
   caption?: string;
 }
@@ -122,8 +123,8 @@ export const projectDetails: ProjectDetail[] = [
       },
     ],
     media: [
-       { type: "image", src: "/projects/End-to-End-AI-Generated-Podcast/podcast.png", caption: "Episode Cover Image" },
-      // { type: "youtube", src: "YOUR_YOUTUBE_VIDEO_ID", caption: "Sample Episode" },
+      { type: "spotify", src: "https://open.spotify.com/show/0jx7N6Uh2xErRfgseU0rjZ", caption: "Listen on Spotify" },
+      { type: "image", src: "/projects/End-to-End-AI-Generated-Podcast/podcast.png", caption: "Episode Cover Image" },
     ],
   },
   {
@@ -190,7 +191,10 @@ export const projectDetails: ProjectDetail[] = [
         ],
       },
     ],
-    media: [],
+    media: [
+      { type: "youtube", src: "OFlqOgHWbqU", caption: "Self Learning Detection System" },
+      { type: "youtube", src: "l3TIrdrO4-w", caption: "Self Learning Detection System" },
+    ],
   },
   {
     slug: "3d-printing-defect",
@@ -377,7 +381,8 @@ export const projectDetails: ProjectDetail[] = [
       },
     ],
     media: [
-      { type: "image", src: "/projects/Foreign-Object-Debris-Detection/output.png", caption: "Example Output" },
+      { type: "youtube", src: "OKrfR5Pr5XE", caption: "Foreign Object Debris Detection Demo" },
+      { type: "image", src: "/projects/Foreign-Object-Debris-Detection/output.png", caption: "Generated Synthetic Dataset Samples" },
     ],
   },
   {
