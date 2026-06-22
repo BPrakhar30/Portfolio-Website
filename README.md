@@ -1,4 +1,4 @@
-# Prakhar Bhardwaj — Portfolio Website
+# Prakhar Bhardwaj  -  Portfolio Website
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -12,8 +12,8 @@ A dual-mode portfolio built with **Next.js 16**, **Tailwind CSS v4**, and **Fram
 
 | Mode | Route | Description |
 |------|-------|-------------|
-| **Simple** | `/` | Clean, minimal, professional — great for recruiters |
-| **Creative** | `/creative` | Dark theme, particle animations, scroll effects — eye-catching & impressive |
+| **Simple** | `/` | Clean, minimal, professional  -  great for recruiters |
+| **Creative** | `/creative` | Dark theme, particle animations, scroll effects  -  eye-catching & impressive |
 
 ## Stack
 
@@ -34,20 +34,20 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Deploy to Vercel
 
-### Option 1 — Vercel CLI (fastest)
+### Option 1  -  Vercel CLI (fastest)
 ```bash
 npm i -g vercel
 vercel
 ```
 
-### Option 2 — GitHub + Vercel Dashboard
+### Option 2  -  GitHub + Vercel Dashboard
 1. Push this folder to a GitHub repo
 2. Go to [vercel.com/new](https://vercel.com/new)
-3. Import your repo — Vercel auto-detects Next.js
-4. Click **Deploy** — done!
+3. Import your repo  -  Vercel auto-detects Next.js
+4. Click **Deploy**  -  done!
 
 No environment variables needed. The site is fully static.
 
 ## Customization
 
-All content lives in `src/data/portfolio.ts` — edit that file to update any info, projects, or skills.
+All content lives in `src/data/portfolio.ts`  -  edit that file to update any info, projects, or skills.

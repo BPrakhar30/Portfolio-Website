@@ -123,7 +123,7 @@ export const projectDetails: ProjectDetail[] = [
       },
     ],
     media: [
-      { type: "spotify", src: "https://open.spotify.com/show/0jx7N6Uh2xErRfgseU0rjZ", caption: "Listen on Spotify" },
+      { type: "spotify", src: "https://open.spotify.com/episode/1MpizVeG2DQrifcPd1M3dm?trackId=1MpizVeG2DQrifcPd1M3dm", caption: "Listen on Spotify" },
       { type: "image", src: "/projects/End-to-End-AI-Generated-Podcast/podcast.png", caption: "Episode Cover Image" },
     ],
   },
@@ -131,7 +131,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: "rag-chatbot",
     title: "RAG Chatbot",
     subtitle: "Retrieval-Augmented Generation System",
-    tagline: "A RAG-based chatbot with LangChain, Llama 3, and Chroma vector DB — deployed as a Chrome extension for instant access on any webpage.",
+    tagline: "A RAG-based chatbot with LangChain, Llama 3, and Chroma vector DB  -  deployed as a Chrome extension for instant access on any webpage.",
     tags: ["RAG", "LangChain", "Llama 3", "Chroma DB", "OpenAI Embeddings", "Flask", "React"],
     github: "https://github.com/BPrakhar30/LLM_Stack",
     sections: [
@@ -158,7 +158,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: "self-learning",
     title: "Self-Learning AI System",
     subtitle: "Dynamic Object Recognition at Skylark Labs",
-    tagline: "An AI system that can identify, label, and learn from new objects in real-time without human intervention — built for Skylark Labs.",
+    tagline: "An AI system that can identify, label, and learn from new objects in real-time without human intervention  -  built for Skylark Labs.",
     tags: ["YOLOv8", "DreamSim", "BoT-SORT", "Swin Transformer", "PyTorch", "Computer Vision"],
     github: "https://github.com/BPrakhar30/Self_Learning",
     sections: [
@@ -168,7 +168,7 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         heading: "Methods",
-        body: "The core of our method uses a detection model (YOLOv8) for accurately detecting objects within various frames. Once detected, DreamSim — a perceptual similarity model — analyzes and interprets the characteristics of each object. A specialized database of known objects is maintained, and a cosine similarity threshold determines when an object should be categorized as new. BoT-SORT tracks objects across frames and revises labels for accuracy.",
+        body: "The core of our method uses a detection model (YOLOv8) for accurately detecting objects within various frames. Once detected, DreamSim  -  a perceptual similarity model  -  analyzes and interprets the characteristics of each object. A specialized database of known objects is maintained, and a cosine similarity threshold determines when an object should be categorized as new. BoT-SORT tracks objects across frames and revises labels for accuracy.",
       },
       {
         heading: "Outcomes",
@@ -183,7 +183,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         heading: "My Contributions",
         body: [
-          "Developed the self-labeling module — design and implementation of object recognition and labeling pipeline",
+          "Developed the self-labeling module  -  design and implementation of object recognition and labeling pipeline",
           "Integrated and optimized DreamSim for efficient feature extraction from detected objects",
           "Managed the database of known objects and fine-tuned cosine similarity thresholds for improved recognition",
           "Implemented BoT-SORT tracking for cross-frame object label revision and accuracy improvement",
@@ -206,7 +206,7 @@ export const projectDetails: ProjectDetail[] = [
     sections: [
       {
         heading: "Introduction",
-        body: "In an era where manufacturing efficiency and precision are paramount, this project focused on early detection of 3D printing issues. The initiative was rooted in the social value of reducing material waste and enhancing the quality of 3D printed products. The objective was to develop a machine learning model capable of identifying under-extrusion defects — pivotal for maintaining the integrity of printed objects.",
+        body: "In an era where manufacturing efficiency and precision are paramount, this project focused on early detection of 3D printing issues. The initiative was rooted in the social value of reducing material waste and enhancing the quality of 3D printed products. The objective was to develop a machine learning model capable of identifying under-extrusion defects  -  pivotal for maintaining the integrity of printed objects.",
       },
       {
         heading: "Dataset",
@@ -241,7 +241,7 @@ export const projectDetails: ProjectDetail[] = [
     sections: [
       {
         heading: "Introduction",
-        body: "GameStyler was built to enhance the visual experience of video game interfaces. By integrating the artistic essence of renowned paintings into the gaming world, the goal was to elevate the aesthetic appeal and provide a unique gaming experience — blending fine art with entertainment without compromising gameplay.",
+        body: "GameStyler was built to enhance the visual experience of video game interfaces. By integrating the artistic essence of renowned paintings into the gaming world, the goal was to elevate the aesthetic appeal and provide a unique gaming experience  -  blending fine art with entertainment without compromising gameplay.",
       },
       {
         heading: "Methods",
@@ -273,7 +273,7 @@ export const projectDetails: ProjectDetail[] = [
     sections: [
       {
         heading: "Overview",
-        body: "This project uses Generative Adversarial Networks (GANs) to generate realistic images of human faces. The primary objective was to build and train a GAN model that could synthesize facial images convincingly using the CelebA dataset — a large-scale collection of celebrity faces.",
+        body: "This project uses Generative Adversarial Networks (GANs) to generate realistic images of human faces. The primary objective was to build and train a GAN model that could synthesize facial images convincingly using the CelebA dataset  -  a large-scale collection of celebrity faces.",
       },
       {
         heading: "Method",
@@ -303,7 +303,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: "structure-from-motion",
     title: "Instant3D: 3D Reconstruction with AI",
     subtitle: "Structure from Motion + Neural Radiance Fields",
-    tagline: "Using smartphone cameras and AI upsampling to generate high-quality 3D models with same-day delivery — significantly faster than traditional methods.",
+    tagline: "Using smartphone cameras and AI upsampling to generate high-quality 3D models with same-day delivery  -  significantly faster than traditional methods.",
     tags: ["Structure from Motion", "NeRF", "Super-Resolution", "OpenCV", "3D Reconstruction"],
     github: "https://github.com/BPrakhar30/Structure_from_Motion",
     sections: [
@@ -318,7 +318,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         heading: "Performance",
         body: [
-          "Same-day 3D model delivery — significantly outperforming traditional photogrammetry methods in speed",
+          "Same-day 3D model delivery  -  significantly outperforming traditional photogrammetry methods in speed",
           "Notable improvement in model accuracy and detail from the image upsampling step",
           "Cost-effective: uses standard smartphone cameras instead of specialized 3D scanning hardware",
         ],
@@ -395,7 +395,7 @@ export const projectDetails: ProjectDetail[] = [
     sections: [
       {
         heading: "Overview",
-        body: "A fine-tuning pipeline for BERT-base-uncased targeting sentiment analysis. The model was trained on the Sentiment140 dataset (1.6 million tweets) — a large-scale, real-world NLP benchmark with noisy labels from Twitter.",
+        body: "A fine-tuning pipeline for BERT-base-uncased targeting sentiment analysis. The model was trained on the Sentiment140 dataset (1.6 million tweets)  -  a large-scale, real-world NLP benchmark with noisy labels from Twitter.",
       },
       {
         heading: "Methods",
