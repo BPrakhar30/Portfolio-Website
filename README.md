@@ -1,6 +1,12 @@
 # Prakhar Bhardwaj — Portfolio Website
 
+[![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-000?style=for-the-badge&logo=vercel)](https://portfolio-website-khaki-zeta-44.vercel.app)
+
 A dual-mode portfolio built with **Next.js 16**, **Tailwind CSS v4**, and **Framer Motion**.
+
+**Live:** [portfolio-website-khaki-zeta-44.vercel.app](https://portfolio-website-khaki-zeta-44.vercel.app)
 
 ## Two Modes
 
