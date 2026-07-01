@@ -15,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Prakhar Bhardwaj | AI Engineer",
   description:
-    "AI Engineer & ML Specialist — CMU MS graduate specializing in LLMs, Computer Vision, and building production AI systems.",
+    "AI Engineer & ML Specialist  -  CMU MS graduate specializing in LLMs, Computer Vision, and building production AI systems.",
   keywords: ["AI Engineer", "Machine Learning", "Computer Vision", "LLM", "Carnegie Mellon", "Prakhar Bhardwaj"],
   openGraph: {
     title: "Prakhar Bhardwaj | AI Engineer",
-    description: "AI Engineer & ML Specialist — CMU MS graduate specializing in LLMs and Computer Vision.",
+    description: "AI Engineer & ML Specialist  -  CMU MS graduate specializing in LLMs and Computer Vision.",
     type: "website",
   },
 };
