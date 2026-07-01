@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useInView } from "framer-motion";
 import { ProjectDetail } from "@/data/projectsContent";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 import { MediaCarousel } from "@/components/MediaCarousel";
 
@@ -120,7 +120,7 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
       />
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080812]/80 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 py-5">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <Link
             href="/creative"
@@ -139,8 +139,19 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
           Portfolio
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-          {project.github ? (
+        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm px-4 py-2 rounded-full hover:bg-indigo-500/30 hover:text-white transition-all"
+            >
+              Live
+              <ExternalLink size={12} />
+            </a>
+          )}
+          {project.github && (
             <a
               href={project.github}
               target="_blank"
@@ -150,8 +161,6 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
               <GithubIcon style={{ width: 14, height: 14 }} />
               GitHub
             </a>
-          ) : (
-            <div className="w-24" />
           )}
         </motion.div>
       </nav>
@@ -190,7 +199,7 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-8">
             {project.tags.map((tag) => (
               <span
                 key={tag}
@@ -199,6 +208,44 @@ export default function CreativeProjectPage({ project }: { project: ProjectDetai
                 {tag}
               </span>
             ))}
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-wrap gap-3">
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-500/30 hover:text-white transition-all"
+              >
+                Live Project
+                <ExternalLink size={13} />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 border border-white/20 text-gray-300 px-5 py-2.5 rounded-lg text-sm font-medium hover:border-white/40 hover:text-white transition-all"
+              >
+                <GithubIcon style={{ width: 15, height: 15 }} />
+                GitHub Repository
+                <ExternalLink size={13} />
+              </a>
+            )}
+            {project.article && (
+              <a
+                href={project.article}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 border border-white/10 text-gray-400 px-5 py-2.5 rounded-lg text-sm font-medium hover:border-white/30 hover:text-gray-200 transition-all"
+              >
+                Read Article
+                <ExternalLink size={13} />
+              </a>
+            )}
           </div>
         </FadeIn>
       </section>

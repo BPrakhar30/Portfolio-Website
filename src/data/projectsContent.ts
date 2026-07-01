@@ -19,6 +19,8 @@ export interface ProjectDetail {
   tagline: string;
   tags: string[];
   github?: string;
+  live?: string;
+  article?: string;
   sections: ProjectSection[];
   media: ProjectMedia[];
 }
@@ -31,6 +33,8 @@ export const projectDetails: ProjectDetail[] = [
     tagline: "A production-grade AI copilot that connects to your brokerage, analyzes your holdings, and chats with you about your portfolio using Google Gemini 2.5 Flash.",
     tags: ["PydanticAI", "FastMCP", "Next.js 16", "FastAPI", "PostgreSQL", "Gemini 2.5 Flash", "Docker"],
     github: "https://github.com/BPrakhar30/Robinhood_AI_Portfolio_Analyzer",
+    live: "https://myportfoliocopilot.com/",
+    article: "https://medium.com/@ai.prakharb/how-i-built-an-ai-portfolio-copilot-pydanticai-agent-architecture-42b1167fb87a",
     sections: [
       {
         heading: "Overview",

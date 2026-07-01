@@ -97,6 +97,8 @@ export const projects = [
     description: "Full-stack AI investment platform with Robinhood/CSV brokerage import, a conversational PydanticAI agent (Gemini 2.5 Flash) over FastMCP tools, portfolio health scoring, macro analysis, real-time stock data, and streaming SSE chat. Full auth, rate limiting, Logfire observability, and Docker Compose deployment.",
     tags: ["PydanticAI", "FastMCP", "Next.js", "FastAPI", "PostgreSQL", "Gemini"],
     github: "https://github.com/BPrakhar30/Robinhood_AI_Portfolio_Analyzer",
+    live: "https://myportfoliocopilot.com/",
+    article: "https://medium.com/@ai.prakharb/how-i-built-an-ai-portfolio-copilot-pydanticai-agent-architecture-42b1167fb87a",
     featured: true,
   },
   {
