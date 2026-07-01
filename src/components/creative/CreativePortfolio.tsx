@@ -109,10 +109,11 @@ function TypeWriter({ words }: { words: string[] }) {
       timeout = setTimeout(() => setCharIdx((c) => c + 1), 80);
     } else if (!deleting && charIdx > current.length) {
       timeout = setTimeout(() => setDeleting(true), 2000);
-    } else if (deleting && charIdx >= 0) {
+    } else if (deleting && charIdx > 0) {
       setText(current.slice(0, charIdx));
       timeout = setTimeout(() => setCharIdx((c) => c - 1), 40);
-    } else {
+    } else if (deleting && charIdx === 0) {
+      setText("");
       setDeleting(false);
       setIdx((i) => (i + 1) % words.length);
     }
@@ -256,7 +257,7 @@ export default function CreativePortfolio() {
       {/* ── HERO ── */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-28"
+        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 pb-28"
       >
         {/* Glow orb */}
         <motion.div
